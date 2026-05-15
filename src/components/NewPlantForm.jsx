@@ -1,34 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { useOutletContext } from 'react-router-dom';
 
-function NewPlantForm() {
-  // //CREATE STATES FOR INPUTS
-  // const [name, setNames] = useState()
-  // const [imageUrl, setImageUrl] = useState()
-  // const [price, setPrice] = useState()
+function NewPlantForm({plantsApi}) {
+  //CREATE USER INPUT STATE AND INITIALIZE TO AN OBJECT
+  const [userInput, setUserInput] = useState({ name: "", image: "", price: 0 })
   
-  const [userInput, setUserInput]=useState({name:"",imageUrl:"",price:""})
-
+  //POST USER INPUT DATA 
+  async function postUserInput() {
+    try {
+      await fetch(plantsApi, ({
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(userInput)
+      }))
+        .then(res => res.json)
+      .then(data=>setUserInput(data))
+    }
+    catch (err) {
+      console.error(err)
+    }
+    //NULL THE INPUT FIELD
+    setUserInput({ name: "", image: "", price: 0 })
+  }
   function handleSubmit(e) {
     e.preventDefault()
-    //'POST' METHOD
-  useEffect(() => {
-    async function postUserInput(userInputData) {
-      const plantsApi = useOutletContext()
-      await fetch((plantsApi), {
-        method: 'POST',
-        headers: {
-          'Content-Type':'application/json'
-        },
-        body:JSON.stringify(userInput)
-      })
-    }
-    postUserInput() 
-    setUserInput({name:"",imageUrl:"",price:""})
-  },[])
-    
+
+    postUserInput()
   }
-  
   
   return (
     <div className="new-plant-form">
@@ -39,25 +37,29 @@ function NewPlantForm() {
           name="name"
           value={userInput.name}
           placeholder="Plant name"
-
-          onChange={(e) => {
-            setUserInput(e.target.value)
-          }}
         
+          onChange={(e) => {
+            setUserInput(prevInput => ({
+              ...prevInput,[e.target.name]:e.target.value
+            }))
+          }}
+          
         required
         />
         <input
           type="text"
           name="image"
-          value={userInput.imageUrl}
+          value={userInput.image}
           placeholder="Image URL"
 
           onChange={(e) => {
-            setUserInput(e.target.value)
+            setUserInput(prevInput => ({
+              ...prevInput,[e.target.name]:e.target.value
+            }))
           }}
-        
           required
         />
+
         <input
           type="number"
           name="price"
@@ -66,13 +68,15 @@ function NewPlantForm() {
           placeholder="Price"
         
           onChange={(e) => {
-            setUserInput(e.target.value)
+            setUserInput(prevInput => ({
+              ...prevInput,[e.target.name]:parseFloat(e.target.value)
+            }))
           }}
-
+          
           required
         />
 
-        <button type="submit">Add Plant</button>
+        <button type="submit" >Add Plant</button>
       </form>
     </div>
   );

@@ -1,13 +1,14 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList({plantsList}) {
+function PlantList({ plants }) {
+  console.log("Visible Plants", plants)
   
   return (
     <ul className="cards">{/* render PlantCards components in here */}
-      {plantsList.map(plant => (
-        <PlantCard key={plant.id} plant={plant} />
-      ))}
+      {plants.map((plant) => 
+        <PlantCard key={plant.id} plants={plant} />
+      )}
     </ul>
   );
 }

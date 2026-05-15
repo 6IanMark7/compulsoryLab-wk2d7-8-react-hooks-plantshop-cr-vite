@@ -43,199 +43,28 @@
       "price": 55
     },
     {
-      "price": null,
-      "id": "yiXZLvzBwMA"
+      "name": "Stinging Nettle",
+      "image": "https://images.pexels.com/photos/37344740/pexels-photo-37344740.jpeg",
+      "price": 42,
+      "id": "tOEKd5q7ni8"
     },
     {
-      "price": null,
-      "id": "ZS5KHIL5tWc"
+      "name": "Sativa",
+      "image": "https://images.pexels.com/photos/36874658/pexels-photo-36874658.jpeg",
+      "price": 67,
+      "id": "9UllVjvh8dQ"
     },
     {
-      "price": null,
-      "id": "JkRJhmdvdt8"
+      "name": "Venus",
+      "image": "https://images.pexels.com/photos/12463886/pexels-photo-12463886.jpeg",
+      "price": 33,
+      "id": "caJ_w1dOosw"
     },
     {
-      "price": null,
-      "id": "RGImRmuI_kw"
-    },
-    {
-      "price": null,
-      "id": "l9dZLtqysKQ"
-    },
-    {
-      "price": null,
-      "id": "pun6K2iqGKQ"
-    },
-    {
-      "price": null,
-      "id": "n9aomGhHFeA"
-    },
-    {
-      "price": null,
-      "id": "B-XDaDTeq3E"
-    },
-    {
-      "price": null,
-      "id": "w18xF5ILyY4"
-    },
-    {
-      "price": null,
-      "id": "aPJBCFazSYI"
-    },
-    {
-      "price": null,
-      "id": "_zUysl_RdfI"
-    },
-    {
-      "price": null,
-      "id": "_XGd7OiRTlI"
-    },
-    {
-      "price": null,
-      "id": "Ov9ztMMvIuM"
-    },
-    {
-      "price": null,
-      "id": "X4t7WAtsr60"
-    },
-    {
-      "price": null,
-      "id": "hLWmqR5NO-o"
-    },
-    {
-      "price": null,
-      "id": "xjdfupGMwqQ"
-    },
-    {
-      "price": null,
-      "id": "GkQ6E-tpk5E"
-    },
-    {
-      "price": null,
-      "id": "Sdojukffp24"
-    },
-    {
-      "price": null,
-      "id": "10ALCmMWogM"
-    },
-    {
-      "price": null,
-      "id": "DJZx0ilISsU"
-    },
-    {
-      "price": null,
-      "id": "sqgXTRCuOJw"
-    },
-    {
-      "price": null,
-      "id": "khfdG4NQNG4"
-    },
-    {
-      "price": null,
-      "id": "Pc1HVGhWetw"
-    },
-    {
-      "price": null,
-      "id": "JnE0B372PrY"
-    },
-    {
-      "price": null,
-      "id": "kk1wLn30pLY"
-    },
-    {
-      "price": null,
-      "id": "CyG8JdWsgjs"
-    },
-    {
-      "price": null,
-      "id": "2S5KCiCD8TE"
-    },
-    {
-      "price": null,
-      "id": "VjtABiQP2kI"
-    },
-    {
-      "price": null,
-      "id": "59L_oZgUuvU"
-    },
-    {
-      "price": null,
-      "id": "uEVmgrmbN_A"
-    },
-    {
-      "price": null,
-      "id": "NJO3y-0vT8w"
-    },
-    {
-      "price": null,
-      "id": "xTxyXmSEXjo"
-    },
-    {
-      "price": null,
-      "id": "8yYGYsSQmQY"
-    },
-    {
-      "price": null,
-      "id": "XJAIe8TU5lw"
-    },
-    {
-      "price": null,
-      "id": "b3XIK5MjL0Q"
-    },
-    {
-      "id": "lQtnNwhgn-4"
-    },
-    {
-      "id": "vmJX3U0BrWo"
-    },
-    {
-      "id": "pIlC1qew7yU"
-    },
-    {
-      "id": "u5pQGhJ2Pyc"
-    },
-    {
-      "id": "lauzFW83IZA"
-    },
-    {
-      "id": "nfYjnXzrLRI"
-    },
-    {
-      "id": "3Mwq_dTxyUo"
-    },
-    {
-      "id": "Aamu5YgANcU"
-    },
-    {
-      "id": "hkgUogeOdTk"
-    },
-    {
-      "id": "mGH6ZZTM53w"
-    },
-    {
-      "id": "0rbZPjO60w4"
-    },
-    {
-      "id": "fazZlW6BbsM"
-    },
-    {
-      "id": "csFGte4ofdI"
-    },
-    {
-      "id": "CAcgVYnBux0"
-    },
-    {
-      "id": "ZZEfIqCrppc"
-    },
-    {
-      "id": "GAlgn0-N8i0"
-    },
-    {
-      "id": "qCsa89SqVVY"
-    },
-    {
-      "price": null,
-      "id": "itBwoYa6iuk"
+      "name": "Mustard",
+      "image": "https://images.pexels.com/photos/29592811/pexels-photo-29592811.jpeg",
+      "price": 76,
+      "id": "1iGUU3N_24c"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
