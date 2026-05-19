@@ -4,20 +4,20 @@ import PlantList from "./PlantList";
 import Search from "./Search";
 
 function PlantPage() {
-  const plantsApi = "http://localhost:4200/plants";
+  const plantsApi = "http://localhost:6001/plants";
 
   //CREATE PLANTS STATE
-  const [plants, setPlants] = useState([])
+  const [newPlants, setNewPlants] = useState([])
   //CREATE FILTERED PLANTS STATE
   const [searchTerm, setSearchTerm] = useState("")
   
   //FETCH DATA FROM SERVER - GET
   async function getPlantsData() {
     try {
-      const fetchUrl = await fetch(plantsApi)
-      const fetchedData = await fetchUrl.json()
+      const newPlant = await fetch(plantsApi)
+      const fetchedData = await newPlant.json()
     
-      setPlants(fetchedData);
+      setNewPlants(fetchedData);
     }
     catch (err) {
       console.error(err)
@@ -28,15 +28,14 @@ function PlantPage() {
   }, [])
   
   //FILTER THE PLANTS WHEN USER SEARCHES AND SEND STATES TO Search COMPONENT
-  const visiblePlants = plants.filter((plant) =>
-      plant.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const visiblePlants = newPlants.filter((plant) => 
+    plant.name.toLowerCase().includes(searchTerm.toLowerCase())
       
-    )
+  )
   
-  console.log("Line 32", plants)
   return (
     <main>
-      <NewPlantForm plantsApi={plantsApi} />
+      <NewPlantForm plantsApi={plantsApi} newPlants={newPlants} setNewPlants={setNewPlants} />
       <Search searchTerm={searchTerm } setSearchTerm={setSearchTerm} />
       <PlantList plants={visiblePlants} />
     </main>

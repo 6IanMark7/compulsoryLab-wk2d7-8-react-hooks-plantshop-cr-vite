@@ -5,11 +5,13 @@ function PlantList({ plants }) {
   console.log("Visible Plants", plants)
   
   return (
+    <div>
     <ul className="cards">{/* render PlantCards components in here */}
       {plants.map((plant) => 
         <PlantCard key={plant.id} plants={plant} />
       )}
-    </ul>
+      </ul>
+    </div>
   );
 }
 

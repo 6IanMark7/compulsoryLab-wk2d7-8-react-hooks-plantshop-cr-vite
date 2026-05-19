@@ -64,7 +64,13 @@
       "name": "Mustard",
       "image": "https://images.pexels.com/photos/29592811/pexels-photo-29592811.jpeg",
       "price": 76,
-      "id": "1iGUU3N_24c"
+      "id": "czpqFNzdkFE"
+    },
+    {
+      "name": "oxalis",
+      "image": "www.thafai:img/thaf",
+      "price": "42",
+      "id": "9HaVcBsTk6I"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

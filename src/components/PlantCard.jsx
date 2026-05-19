@@ -10,6 +10,7 @@ function PlantCard({ plants }) {
   }
   
   return (
+    <div>
     <li className="card" data-testid={"plant-item"} >
 
       {plants.image ? <img src={plants.image} alt={"plant name"} /> : <img src={"https://via.placeholder.com/400"} alt={"plant name"} />}
@@ -23,7 +24,8 @@ function PlantCard({ plants }) {
             
           >Out of Stock</button>
       )}
-    </li>
+      </li>
+    </div>
   );
 }
 

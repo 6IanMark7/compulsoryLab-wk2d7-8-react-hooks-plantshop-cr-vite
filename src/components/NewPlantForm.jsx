@@ -1,31 +1,47 @@
 import React, { useState, useEffect } from "react";
 import { useOutletContext } from 'react-router-dom';
 
-function NewPlantForm({plantsApi}) {
+function NewPlantForm({plantsApi, newPlants, setNewPlants}) {
   //CREATE USER INPUT STATE AND INITIALIZE TO AN OBJECT
-  const [userInput, setUserInput] = useState({ name: "", image: "", price: 0 })
+  const [userInput, setUserInput] = useState({ name: "", image: "", price: "" })
+  
   
   //POST USER INPUT DATA 
   async function postUserInput() {
     try {
-      await fetch(plantsApi, ({
+      const fetchThis= await fetch(plantsApi, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userInput)
-      }))
-        .then(res => res.json)
-      .then(data=>setUserInput(data))
+      })
+
+      if (!fetchThis.ok) {
+        throw new Error ("Error Fetching Request!")
+      }
+      const fetched = await fetchThis.json()
+      setNewPlants((prev) => [...prev, fetched])
+      
+      // NULL THE INPUT FIELD
+      setUserInput({ name: "", image: "", price: "" })
     }
     catch (err) {
       console.error(err)
     }
-    //NULL THE INPUT FIELD
-    setUserInput({ name: "", image: "", price: 0 })
+    
   }
   function handleSubmit(e) {
     e.preventDefault()
 
-    postUserInput()
+    postUserInput();
+  }
+  function handleChange(e) {
+    const {name, value}=e.target
+    setUserInput((prev) => ({
+      ...prev, [name]: value
+    })
+      
+    
+    )
   }
   
   return (
@@ -38,11 +54,7 @@ function NewPlantForm({plantsApi}) {
           value={userInput.name}
           placeholder="Plant name"
         
-          onChange={(e) => {
-            setUserInput(prevInput => ({
-              ...prevInput,[e.target.name]:e.target.value
-            }))
-          }}
+          onChange={handleChange}
           
         required
         />
@@ -52,11 +64,7 @@ function NewPlantForm({plantsApi}) {
           value={userInput.image}
           placeholder="Image URL"
 
-          onChange={(e) => {
-            setUserInput(prevInput => ({
-              ...prevInput,[e.target.name]:e.target.value
-            }))
-          }}
+          onChange={handleChange}
           required
         />
 
@@ -67,11 +75,7 @@ function NewPlantForm({plantsApi}) {
           value={userInput.price}
           placeholder="Price"
         
-          onChange={(e) => {
-            setUserInput(prevInput => ({
-              ...prevInput,[e.target.name]:parseFloat(e.target.value)
-            }))
-          }}
+          onChange={handleChange}
           
           required
         />
