@@ -2,7 +2,7 @@ import React from "react";
 import PlantCard from "./PlantCard";
 
 function PlantList({ plants }) {
-  console.log("Visible Plants", plants)
+  //console.log("Visible Plants", plants)
   
   return (
     <div>

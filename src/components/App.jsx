@@ -6,6 +6,7 @@ import { Outlet } from 'react-router-dom';
 import NewPlantForm from "./NewPlantForm";
 
 function App() {
+  //APP COMPONENT
   return (
     <div className="app">
       <Header />
